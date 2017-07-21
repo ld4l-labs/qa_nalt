@@ -1,5 +1,13 @@
 # Overview
 
+This document describes how to setup a local cache of NALT linked data for query and use in an end-user application. 
+
+## NALT vocabulary
+
+The NAL Agricultural Thesaurus (NALT) was originally prepared by staff of the National Agricultural Library to meet the needs of the United States Department of Agriculture (USDA), Agricultural Research Service (ARS).  ([more information](https://agclass.nal.usda.gov/background.shtml)]
+
+## Background
+
 The system described here is designed to process linked data search results into a format that is easily digestable by end applications.  It allows user interfaces to be designed to handle searching and presentation of linked data in a consistent way.  
 
 There are a number of authorities that are configured to work with this process.  Look for all repositories starting with `qa_` in [Linked Data for Libraries Labs (LD4L Labs)](https://github.com/ld4l-labs).
@@ -12,6 +20,8 @@ There are two servers that drive this system.
 
 More information on working with linked data through the QA gem is available in it's README in section [Linked Open Data (LOD) Authorities](https://github.com/samvera/questioning_authority#linked-open-data-lod-authorities)
 
+
+# Usage
 
 ## Setting up a linked data authority server for NALT
 
@@ -117,6 +127,6 @@ http://localhost:3002/qa/search/linked_data/nalt?q=test&maxRecords=3
    "label":"intestinal absorption"}]
 ```
 
-#### Test that QA generates the expected linked data authority server URL
+### Test that QA generates the expected linked data authority server URL
 
 If you don't see any results, you can check that the correct URL for the linked data server is generated.  In the QA server, search log/development.log for `QA Linked Data search url:`.  Then you can copy/paste that URL into a browser or use curl in the terminal to verify that the generate URL accessing the linked data authority server actually returns data as expected.
